@@ -25,7 +25,7 @@ export default function HeroSection() {
   return (
     <div className={`flex flex-col min-h-screen ${isDark ? 'bg-[#00121E]' : 'bg-gradient-to-b from-white to-purple-50'}`}>
       {/* Header - Improved mobile padding */}
-      <header className={`sticky top-0 z-50 w-full p-4   px-8 sm:px-6 lg:px-8 ${
+      <header className={`top-0 z-50 w-full p-4   px-8 sm:px-6 lg:px-8 ${
         isDark ? 'bg-[#00121E]/80 ' : 'bg-white/80 '
       } backdrop-blur-md`}>
         <div className="max-w-7xl mx-auto flex h-16  md:px-24 sm:h-20 items-center justify-between">
@@ -122,7 +122,7 @@ export default function HeroSection() {
                   alt="Analytics illustration"
                   width={600}
                   height={600}
-                  className="w-full max-w-[350px] sm:max-w-[400px] mx-auto object-contain drop-shadow-xl"
+                  className="w-full max-w-[350px] sm:max-w-[500px] mx-auto object-contain drop-shadow-xl"
                   priority
                 />
               </div>
@@ -142,20 +142,14 @@ export default function HeroSection() {
                       alt="Analytics illustration"
                       width={200}
                       height={200}
-                      className="w-[180px] sm:w-[200px] lg:w-[350px] object-contain drop-shadow-xl"
+                      className="w-[180px] sm:w-[200px] lg:w-[400px] object-contain drop-shadow-xl"
                       priority
                     />
                   </div>
-                  <div className="text-4xl">Digital Solution Agency</div>
+                  <div className="text-4xl py-2">Digital Solution Agency</div>
                   <div className="text-lg font-medium ">Elevating Brands with Web & Marketing Solutions</div>
                 </div>
               </div>
-
-              {/* Rest of the content remains the same */}
-              <p className={`text-center md:text-start text-sm sm:text-sm pr-0 sm:pr-12 lg:pr-24 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                Transforming your concepts into innovative, impactful, and visually captivating solutions that drive
-                results and bring your ideas to life in the most creative and meaningful ways.
-              </p>
 
               {/* Social Links - Responsive spacing */}
               <div className="flex gap-3 justify-center sm:justify-start sm:gap-4">

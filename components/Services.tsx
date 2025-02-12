@@ -1,0 +1,111 @@
+import React from 'react';
+import { Monitor, Code, Palette, Share2, Search, Database } from 'lucide-react';
+
+const services = [
+  {
+    title: "Website Development",
+    description: "Creating modern, responsive websites that deliver exceptional user experiences and drive results.",
+    icon: Monitor,
+    color: "from-[#00EA6F] to-teal-500"
+  },
+  {
+    title: "Custom Development",
+    description: "Building tailored solutions and applications that solve your unique business challenges.",
+    icon: Code,
+    color: "from-blue-500 to-indigo-500"
+  },
+  {
+    title: "UI/UX Design",
+    description: "Crafting intuitive interfaces and engaging user experiences that delight your customers.",
+    icon: Palette,
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    title: "Social Media",
+    description: "Developing effective social media strategies to boost your brand's online presence.",
+    icon: Share2,
+    color: "from-orange-500 to-red-500"
+  },
+  {
+    title: "SEO Optimization",
+    description: "Improving your website's visibility and ranking in search engine results.",
+    icon: Search,
+    color: "from-yellow-500 to-orange-500"
+  },
+  {
+    title: "Database Design",
+    description: "Creating efficient and scalable database solutions for your business needs.",
+    icon: Database,
+    color: "from-cyan-500 to-blue-500"
+  }
+];
+
+const Services = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-[#00121E] dark:to-[#00121E] py-24 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-10">
+          <h2 className="text-lg font-semibold text-[#00EA6F] dark:text-[#00EA6F] mb-4">
+            Our Expertise
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Services We Deliver
+          </h3>
+          <div className="w-24 h-1 bg-[#00EA6F] mx-auto rounded-full"></div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group relative bg-white dark:bg-[#011420] rounded-2xl p-8 
+                         hover:shadow-2xl transition-all duration-500 ease-out
+                         border border-gray-100 dark:border-gray-700
+                         hover:border-transparent dark:hover:border-transparent
+                         transform hover:-translate-y-2"
+            >
+              {/* Gradient Background Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 
+                            transition-opacity duration-500 rounded-2xl -z-10 blur-xl
+                            group-hover:animate-pulse ${service.color}"></div>
+
+              {/* Icon Container */}
+              <div className="mb-8">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color}
+                                flex items-center justify-center transform 
+                                group-hover:rotate-6 transition-transform duration-500`}>
+                  <service.icon className="w-8 h-8 text-white" />
+                </div>
+              </div>
+
+
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 
+                            group-hover:text-[#00EA6F] group-hover:bg-clip-text 
+                            group-hover:bg-gradient-to-r ${service.color}">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                {service.description}
+              </p>
+
+
+              <div className="mt-6 flex items-center text-sm font-medium
+                            text-gray-600 dark:text-gray-400 group-hover:text-[#00EA6F] 
+                            dark:group-hover:text-[#00EA6F] transition-colors duration-300">
+                <span>Contact Us</span>
+                <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" 
+                     fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Services;
