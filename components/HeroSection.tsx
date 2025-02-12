@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Sun, Twitter, Linkedin, Menu, X } from "lucide-react";
+import { Moon, Sun, Twitter, Linkedin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollingBanner from "./ScrollingBanner";
 
 export default function HeroSection() {
   const [isDark, setIsDark] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = ["Home", "Services", "Testimonials", "Portfolio", "About"];
 
@@ -53,7 +52,7 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
               {navItems.map((item) => (
                 <Link
@@ -71,15 +70,13 @@ export default function HeroSection() {
 
             <div className="flex items-center gap-2 sm:gap-4">
               {/* Theme Toggle */}
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              <button 
                 onClick={toggleTheme}
-                className="text-black bg-[#00EA6F] rounded-full h-8 w-8 hover:bg-[#00EA6F]/80"
+                className="text-black bg-[#00EA6F] flex items-center justify-center rounded-full h-10 w-10 hover:bg-[#00EA6F]/80"
               >
-                {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                {isDark ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
                 <span className="sr-only">Toggle theme</span>
-              </Button>
+              </button>
 
               
             </div>
@@ -112,7 +109,7 @@ export default function HeroSection() {
                       priority
                     />
                   </div>
-                  <div>A Freelance Agency</div>
+                  <div>Digital Solution Agency</div>
                 </div>
               </div>
             </div>
@@ -135,28 +132,27 @@ export default function HeroSection() {
             <div className="order-3 lg:order-1 w-full lg:w-1/2 space-y-6">
               {/* Desktop-only heading */}
               <div className="hidden lg:block space-y-4 text-center sm:text-start">
-                <div className={`inline-flex items-center px-2 py-2 rounded-full ${isDark ? 'text-white' : 'text-black'}`}>
-                  <h2 className="text-lg sm:text-xl font-semibold">Hello There !</h2>
+                <div className={`inline-flex items-center px-2  rounded-full ${isDark ? 'text-white' : 'text-black'}`}>
+                  <h2 className="text-lg sm:text-xl font-normal">Hello There, We&apos;re</h2>
                 </div>
                 <div className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold space-y-2">
-                  <div className="flex justify-center sm:justify-start items-center gap-4">
-                    <span>We&apos;re</span>
+                  <div className="flex justify-center pb-2 sm:justify-start items-center">
                     <Image
                       src="/logo3.svg"
                       alt="Analytics illustration"
                       width={200}
                       height={200}
-                      className="w-[180px] sm:w-[200px] lg:w-[250px] object-contain drop-shadow-xl"
+                      className="w-[180px] sm:w-[200px] lg:w-[350px] object-contain drop-shadow-xl"
                       priority
                     />
                   </div>
-                  <div>Freelance Agency</div>
-                  <div>Based in India.</div>
+                  <div className="text-4xl">Digital Solution Agency</div>
+                  <div className="text-lg font-medium ">Elevating Brands with Web & Marketing Solutions</div>
                 </div>
               </div>
 
               {/* Rest of the content remains the same */}
-              <p className={`text-center md:text-start text-sm sm:text-base pr-0 sm:pr-12 lg:pr-24 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+              <p className={`text-center md:text-start text-sm sm:text-sm pr-0 sm:pr-12 lg:pr-24 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                 Transforming your concepts into innovative, impactful, and visually captivating solutions that drive
                 results and bring your ideas to life in the most creative and meaningful ways.
               </p>
@@ -194,11 +190,29 @@ export default function HeroSection() {
 
               {/* CTA Buttons - Responsive sizing */}
               <div className="flex flex-wrap gap-3 justify-center sm:justify-start sm:gap-4 pt-4">
-                <Button className="bg-[#00EA6F] text-black rounded-full hover:bg-[#00EA6F]/90 shadow-lg text-base sm:text-lg px-4 sm:px-6 lg:px-8">
-                  Book a meet
-                </Button>
-                
+              <div
+              
+              >
+                <button className="group relative overflow-hidden bg-[#00EA6F] text-black rounded-full px-6 sm:px-8 lg:px-10 py-3 shadow-lg hover:shadow-xl hover:shadow-[#00EA6F]/20 transition-shadow duration-300">
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#00EA6F]/0 via-white/20 to-[#00EA6F]/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+                  
+                  {/* Pulse effect */}
+                  <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100">
+                    <div className="absolute inset-0 rounded-full animate-ping bg-[#00EA6F]/20" />
+                  </div>
+                  
+                  {/* Content wrapper */}
+                  <div className="relative flex items-center justify-center gap-2 font-bold">
+                    <span className="text-base sm:text-lg">Book a meet</span>
+                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" />
+                  </div>
+                  
+                  {/* Background glow effect */}
+                  <div className="absolute inset-0 -z-10 bg-[#00EA6F] rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+                </button>
               </div>
+            </div>
             </div>
           </div>
         </section>
