@@ -20,16 +20,16 @@ export default function HeroSection() {
   const toggleTheme = () => {
     setIsDark(!isDark);
     document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    localStorage.setItem('theme', 'dark');
   };
 
   return (
     <div className={`flex flex-col min-h-screen ${isDark ? 'bg-[#00121E]' : 'bg-gradient-to-b from-white to-purple-50'}`}>
       {/* Header - Improved mobile padding */}
-      <header className={`sticky top-0 z-50 w-full  px-4 sm:px-6 lg:px-8 ${
+      <header className={`sticky top-0 z-50 w-full p-4   px-8 sm:px-6 lg:px-8 ${
         isDark ? 'bg-[#00121E]/80 ' : 'bg-white/80 '
       } backdrop-blur-md`}>
-        <div className="max-w-7xl mx-auto flex h-16 md:px-24 sm:h-20 items-center justify-between">
+        <div className="max-w-7xl mx-auto flex h-16  md:px-24 sm:h-20 items-center justify-between">
           {/* Logo section - Responsive sizes */}
           <div className="flex items-center gap-2 sm:gap-3">
             <div className={`rounded-full p-2 sm:p-2.5 shadow-lg ${isDark ? 'shadow-purple-600/20' : 'shadow-purple-200'}`}>
@@ -81,71 +81,65 @@ export default function HeroSection() {
                 <span className="sr-only">Toggle theme</span>
               </Button>
 
-              {/* Mobile Menu Button */}
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`md:hidden ${isDark ? 'text-white' : 'text-black'}`}
-              >
-                {isMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
-                <span className="sr-only">Toggle menu</span>
-              </Button>
+              
             </div>
           </div>
         </div>
 
         {/* Mobile Navigation - Improved animation */}
-        {isMenuOpen && (
-          <div className={`md:hidden absolute left-0 right-0 ${
-            isDark ? 'bg-[#00121E] border-t border-gray-700' : 'bg-white border-t'
-          }`}>
-            <nav className="flex flex-col p-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item}
-                  href="#"
-                  className={`py-3 text-base font-medium transition-colors hover:text-[#00EA6F] ${
-                    isDark ? 'text-white' : 'text-black'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        )}
+        
       </header>
 
       {/* Main Content - Improved responsive layout */}
       <main className={`flex-1 ${isDark ? 'text-white' : 'text-black'}`}>
         <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center py-12 sm:py-12 lg:py-20 gap-8 lg:px-24 lg:gap-12">
+          <div className="flex flex-col lg:flex-row items-center py-8 sm:py-12 lg:py-20 gap-8 lg:px-24 lg:gap-12">
+            {/* Mobile-only heading */}
+            <div className="lg:hidden order-1 w-full space-y-6 flex flex-col py-4">
+              <div className="space-y-4 text-center">
+                <div className={`inline-flex items-center px-2  rounded-full ${isDark ? 'text-white' : 'text-black'}`}>
+                  <h2 className="text-sm sm:text-xl font-semibold">Hello There, <span>We&apos;re</span></h2>
+                </div>
+                <div className="text-2xl md:text-4xl font-extrabold space-y-4 ">
+                  <div className="flex justify-center items-center gap-2">
+                    
+                    <Image
+                      src="/logo3.svg"
+                      alt="Analytics illustration"
+                      width={200}
+                      height={200}
+                      className="w-[200px] sm:w-[200px] object-contain drop-shadow-xl"
+                      priority
+                    />
+                  </div>
+                  <div>A Freelance Agency</div>
+                </div>
+              </div>
+            </div>
+
             {/* Hero Image - Responsive sizing */}
-            <div className="order-1 lg:order-2 w-full lg:w-1/2">
+            <div className="order-2 lg:order-2 w-full lg:w-1/2">
               <div>
                 <Image
                   src="/Hero_Logo.svg"
                   alt="Analytics illustration"
                   width={600}
                   height={600}
-                  className="w-full max-w-[300px] sm:max-w-[400px] mx-auto object-contain drop-shadow-xl"
+                  className="w-full max-w-[350px] sm:max-w-[400px] mx-auto object-contain drop-shadow-xl"
                   priority
                 />
               </div>
             </div>
 
             {/* Content Section - Responsive text and spacing */}
-            <div className="order-2 lg:order-1 w-full lg:w-1/2 space-y-6">
-              <div className="space-y-4 text-center sm:text-start">
-                <div className={`inline-flex items-center px-2 py-2 rounded-full ${
-                  isDark ? 'text-white' : 'text-black'
-                }`}>
+            <div className="order-3 lg:order-1 w-full lg:w-1/2 space-y-6">
+              {/* Desktop-only heading */}
+              <div className="hidden lg:block space-y-4 text-center sm:text-start">
+                <div className={`inline-flex items-center px-2 py-2 rounded-full ${isDark ? 'text-white' : 'text-black'}`}>
                   <h2 className="text-lg sm:text-xl font-semibold">Hello There !</h2>
                 </div>
-                <div className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center sm:text-start font-extrabold space-y-2">
-                  <div className="flex  justify-center sm:justify-start items-center gap-4">
+                <div className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold space-y-2">
+                  <div className="flex justify-center sm:justify-start items-center gap-4">
                     <span>We&apos;re</span>
                     <Image
                       src="/logo3.svg"
@@ -159,11 +153,13 @@ export default function HeroSection() {
                   <div>Freelance Agency</div>
                   <div>Based in India.</div>
                 </div>
-                <p className={` text-center md:text-start text-sm sm:text-base pr-0 sm:pr-12 lg:pr-24 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  Transforming your concepts into innovative, impactful, and visually captivating solutions that drive
-                  results and bring your ideas to life in the most creative and meaningful ways.
-                </p>
               </div>
+
+              {/* Rest of the content remains the same */}
+              <p className={`text-center md:text-start text-sm sm:text-base pr-0 sm:pr-12 lg:pr-24 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                Transforming your concepts into innovative, impactful, and visually captivating solutions that drive
+                results and bring your ideas to life in the most creative and meaningful ways.
+              </p>
 
               {/* Social Links - Responsive spacing */}
               <div className="flex gap-3 justify-center sm:justify-start sm:gap-4">
