@@ -1,0 +1,25 @@
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-40%);
+    }
+  }
+  
+  .animate-scroll {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+  }
+
+  /* Add to your global CSS file */
+.animate-marquee {
+  min-width: max-content;
+  will-change: transform;
+}
+
+/* Optional: Pause animation on hover */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
