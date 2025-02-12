@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes scroll {
     0% {
       transform: translateX(0);
