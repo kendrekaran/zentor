@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Sun, Monitor, Smartphone, Paintbrush, Megaphone, Twitter, Linkedin, Menu, X } from "lucide-react";
+import { Moon, Sun, Twitter, Linkedin, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollingBanner from "./ScrollingBanner";
 
@@ -10,15 +10,7 @@ export default function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = ["Home", "Services", "Testimonials", "Portfolio", "About"];
-  
-  const services = [
-    { icon: Monitor, text: "Website Development" },
-    { icon: Smartphone, text: "App Development" },
-    { icon: Paintbrush, text: "Product Designing" },
-    { icon: Megaphone, text: "Digital Advertising" },
-  ];
 
-  // Initialize theme from localStorage on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     setIsDark(savedTheme === 'dark');
@@ -28,57 +20,46 @@ export default function HeroSection() {
   const toggleTheme = () => {
     setIsDark(!isDark);
     document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
   };
 
   return (
-    <div className={`flex flex-col ${isDark ? ' bg-[#00121E]' : 'bg-gradient-to-b from-white to-purple-50'}`}>
-      {/* Header */}
-      <header className={`sticky top-0 z-50 w-full px-4 sm:px-12 md:px-24 lg:px-48 border-b ${
-        isDark ? 'bg-[#00121E]/80 border-gray-700' : 'bg-white/80 border-gray-200'
+    <div className={`flex flex-col min-h-screen ${isDark ? 'bg-[#00121E]' : 'bg-gradient-to-b from-white to-purple-50'}`}>
+      {/* Header - Improved mobile padding */}
+      <header className={`sticky top-0 z-50 w-full  px-4 sm:px-6 lg:px-8 ${
+        isDark ? 'bg-[#00121E]/80 ' : 'bg-white/80 '
       } backdrop-blur-md`}>
-        <div className="container flex h-20 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className={`rounded-full p-2.5 shadow-lg ${isDark ? 'shadow-purple-600/20' : 'shadow-purple-200'}`}>
+        <div className="max-w-7xl mx-auto flex h-16 md:px-24 sm:h-20 items-center justify-between">
+          {/* Logo section - Responsive sizes */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className={`rounded-full p-2 sm:p-2.5 shadow-lg ${isDark ? 'shadow-purple-600/20' : 'shadow-purple-200'}`}>
               <Image
                 src="/logo1.svg"
                 alt="Analytics illustration"
-                width={30}
-                height={30}
-                className="object-contain drop-shadow-xl"
+                width={24}
+                height={24}
+                className="sm:w-[30px] sm:h-[30px] object-contain drop-shadow-xl"
                 priority
               />
             </div>
-            { isDark ? (
-              <Image
-              src="/logo4.svg"
+            <Image
+              src={isDark ? "/logo4.svg" : "/logo2.svg"}
               alt="Analytics illustration"
-              width={130}
-              height={130}
-              className="object-contain drop-shadow-xl"
+              width={100}
+              height={100}
+              className="w-[100px] sm:w-[130px] object-contain drop-shadow-xl"
               priority
             />
-            ) : (
-              <Image
-              src="/logo2.svg"
-              alt="Analytics illustration"
-              width={130}
-              height={130}
-              className="object-contain drop-shadow-xl"
-              priority
-            />
-            )}
-            
           </div>
 
           {/* Desktop Navigation */}
-          <div className="flex items-center space-x-16">
-            <nav className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-4">
+            <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
               {navItems.map((item) => (
                 <Link
                   key={item}
                   href="#"
-                  className={`text-base font-medium transition-colors hover:text-[#00EA6F] relative group ${
+                  className={`text-sm lg:text-base font-medium transition-colors hover:text-[#00EA6F] relative group ${
                     isDark ? 'text-white' : 'text-black'
                   }`}
                 >
@@ -88,31 +69,33 @@ export default function HeroSection() {
               ))}
             </nav>
 
-            {/* Theme Toggle */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={toggleTheme}
-              className="text-black bg-[#00EA6F] rounded-full h-8 w-8 hover:bg-[#00EA6F]/80"
-            >
-              {isDark ? <Sun className="h-4 w-4 " /> : <Moon className="h-4 w-4" />}
-              <span className="sr-only">Toggle theme</span>
-            </Button>
+            <div className="flex items-center gap-2 sm:gap-4">
+              {/* Theme Toggle */}
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={toggleTheme}
+                className="text-black bg-[#00EA6F] rounded-full h-8 w-8 hover:bg-[#00EA6F]/80"
+              >
+                {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                <span className="sr-only">Toggle theme</span>
+              </Button>
 
-            {/* Mobile Menu Button */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`md:hidden ${isDark ? 'text-white' : 'text-black'}`}
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              <span className="sr-only">Toggle menu</span>
-            </Button>
+              {/* Mobile Menu Button */}
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`md:hidden ${isDark ? 'text-white' : 'text-black'}`}
+              >
+                {isMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </div>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Improved animation */}
         {isMenuOpen && (
           <div className={`md:hidden absolute left-0 right-0 ${
             isDark ? 'bg-[#00121E] border-t border-gray-700' : 'bg-white border-t'
@@ -122,7 +105,7 @@ export default function HeroSection() {
                 <Link
                   key={item}
                   href="#"
-                  className={`py-2 text-base font-medium transition-colors hover:text-[#00EA6F] ${
+                  className={`py-3 text-base font-medium transition-colors hover:text-[#00EA6F] ${
                     isDark ? 'text-white' : 'text-black'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -135,60 +118,55 @@ export default function HeroSection() {
         )}
       </header>
 
-      {/* Main Content */}
+      {/* Main Content - Improved responsive layout */}
       <main className={`flex-1 ${isDark ? 'text-white' : 'text-black'}`}>
-        <section className="container relative">
-          <div className="flex flex-col lg:flex-row items-center py-8 sm:py-16 px-4 sm:pl-12 md:pl-24 lg:pl-48 lg:pt-24 gap-8">
-            {/* Content sections remain the same but with dark mode classes */}
-            <div className="order-1 lg:order-2 flex items-center justify-center lg:justify-end relative w-full lg:w-[60vw]">
-              <div className={`absolute flex justify-center items-center inset-0 ${
-                isDark ? 'bg-gradient-to-r from-purple-900/20 to-purple-800/20' : 'bg-gradient-to-r from-purple-200 to-purple-100'
-              } rounded-full blur-3xl opacity-20`} />
-              <div className="relative w-full max-w-[400px] sm:w-[2000px] aspect-square">
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center py-12 sm:py-12 lg:py-20 gap-8 lg:px-24 lg:gap-12">
+            {/* Hero Image - Responsive sizing */}
+            <div className="order-1 lg:order-2 w-full lg:w-1/2">
+              <div>
                 <Image
                   src="/Hero_Logo.svg"
                   alt="Analytics illustration"
-                  width={700}
-                  height={700}
-                  className="object-contain drop-shadow-xl"
+                  width={600}
+                  height={600}
+                  className="w-full max-w-[300px] sm:max-w-[400px] mx-auto object-contain drop-shadow-xl"
                   priority
                 />
               </div>
             </div>
 
-            <div className="order-2 lg:order-1 flex flex-col justify-center space-y-6">
-              <div className="space-y-4">
-                <div className={`inline-flex items-center leading-loose px-2 py-2 rounded-full ${
+            {/* Content Section - Responsive text and spacing */}
+            <div className="order-2 lg:order-1 w-full lg:w-1/2 space-y-6">
+              <div className="space-y-4 text-center sm:text-start">
+                <div className={`inline-flex items-center px-2 py-2 rounded-full ${
                   isDark ? 'text-white' : 'text-black'
                 }`}>
-                  <h2 className="text-xl font-semibold">Hello There !</h2>
+                  <h2 className="text-lg sm:text-xl font-semibold">Hello There !</h2>
                 </div>
-                <div className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold">
-                  <div className="flex space-x-6">
-                    <div>We're</div>
-                    <div className="mt-1">
-                      <Image
-                        src="/logo3.svg"
-                        alt="Analytics illustration"
-                        width={300}
-                        height={300}
-                        className="object-contain drop-shadow-xl"
-                        priority
-                      />
-                    </div>
+                <div className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center sm:text-start font-extrabold space-y-2">
+                  <div className="flex  justify-center sm:justify-start items-center gap-4">
+                    <span>We&apos;re</span>
+                    <Image
+                      src="/logo3.svg"
+                      alt="Analytics illustration"
+                      width={200}
+                      height={200}
+                      className="w-[180px] sm:w-[200px] lg:w-[250px] object-contain drop-shadow-xl"
+                      priority
+                    />
                   </div>
-                  Freelance Agency
-                  <br />
-                  Based in India.
+                  <div>Freelance Agency</div>
+                  <div>Based in India.</div>
                 </div>
-                <p className={`text-sm pr-24 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+                <p className={` text-center md:text-start text-sm sm:text-base pr-0 sm:pr-12 lg:pr-24 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                   Transforming your concepts into innovative, impactful, and visually captivating solutions that drive
                   results and bring your ideas to life in the most creative and meaningful ways.
                 </p>
               </div>
 
-              {/* Social Links */}
-              <div className="flex gap-4">
+              {/* Social Links - Responsive spacing */}
+              <div className="flex gap-3 justify-center sm:justify-start sm:gap-4">
                 {[
                   { Icon: Twitter, href: "https://twitter.com" },
                   { Icon: () => (
@@ -218,19 +196,12 @@ export default function HeroSection() {
                 ))}
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button className="bg-[#00EA6F] text-black rounded-full hover:bg-[#00EA6F]/90 shadow-lg  text-lg px-6 sm:px-8">
-                  Contact Us
+              {/* CTA Buttons - Responsive sizing */}
+              <div className="flex flex-wrap gap-3 justify-center sm:justify-start sm:gap-4 pt-4">
+                <Button className="bg-[#00EA6F] text-black rounded-full hover:bg-[#00EA6F]/90 shadow-lg text-base sm:text-lg px-4 sm:px-6 lg:px-8">
+                  Book a meet
                 </Button>
-                <Button
-                  variant="outline"
-                  className={`text-lg px-6 sm:px-8 rounded-full hover:bg-purple-50 border-2 hover:border-[#00EA6F] ${
-                    isDark ? 'border-gray-700 text-white hover:bg-gray-800' : ''
-                  }`}
-                >
-                  About Us
-                </Button>
+                
               </div>
             </div>
           </div>
@@ -238,7 +209,6 @@ export default function HeroSection() {
       </main>
 
       <ScrollingBanner />
-
     </div>
   );
 }
