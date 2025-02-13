@@ -9,7 +9,8 @@ import ScrollingBanner from "./ScrollingBanner";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function HeroSection() {
-  const [isDark, setIsDark] = useState(false);
+  // Initialize with dark theme
+  const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -20,15 +21,15 @@ export default function HeroSection() {
     { name: "Contact", href: "#contact" }
   ];
 
+  // Force dark theme on initial load
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    setIsDark(savedTheme === 'dark');
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
   }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) { // md breakpoint
+      if (window.innerWidth >= 768) {
         setIsMenuOpen(false);
       }
     };
@@ -36,7 +37,6 @@ export default function HeroSection() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
