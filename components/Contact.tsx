@@ -124,27 +124,27 @@ function Contact() {
 
   return (
     <div id='contact' className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-[#00121E] dark:to-grau-800">
-      <div className="max-w-7xl mx-auto px-16">
-        <div className="text-center mb-12">
-          <span className="inline-block mb-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-12">
+          <span className="inline-block mb-2 sm:mb-4">
             <span className="text-lg font-semibold text-[#00EA6F]">
               Contact us
             </span>
           </span>
-          <h3 className="text-4xl md:text-5xl font-bold text-[#00121E] dark:text-white mb-6 tracking-tight">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#00121E] dark:text-white mb-4 sm:mb-6 tracking-tight">
               Get in Touch
           </h3>
           <div className="w-24 h-1 bg-[#00EA6F] mx-auto rounded-full mb-6"></div>
         </div>
 
         {/* Form Section */}
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 sm:gap-12">
           <div className="lg:col-span-2">
             <Card className="shadow-xl border-gray-200 dark:border-gray-700 backdrop-blur-sm bg-white/95 dark:bg-[#00121E]/95 hover:shadow-2xl transition-all duration-300">
-              <CardContent className="p-8 sm:p-10">
+              <CardContent className="p-6 sm:p-8 md:p-10">
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                    <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <FormField
                         control={form.control}
                         name="name"
@@ -181,7 +181,7 @@ function Contact() {
                       />
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <FormField
                         control={form.control}
                         name="phone"
@@ -229,7 +229,7 @@ function Contact() {
                       />
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <FormField
                         control={form.control}
                         name="budget"
@@ -297,7 +297,7 @@ function Contact() {
                           <FormControl>
                             <Textarea
                               placeholder="Tell us about your project..."
-                              className="resize-none min-h-[160px] border-gray-300 dark:border-gray-600 focus-visible:ring-[#00EA6F]"
+                              className="resize-none min-h-[120px] sm:min-h-[160px] border-gray-300 dark:border-gray-600 focus-visible:ring-[#00EA6F]"
                               {...field}
                             />
                           </FormControl>
@@ -328,9 +328,9 @@ function Contact() {
           </div>
 
           {/* Contact Information Card */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <Card className="shadow-lg border-gray-200 dark:border-gray-700 backdrop-blur-sm bg-white/95 dark:bg-[#00121E]/95 hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8 space-y-8">
+              <CardContent className="p-6 sm:p-8 space-y-6 sm:space-y-8">
                 {/* Phone Section */}
                 <div className="space-y-3 group cursor-pointer">
                   <h3 className="text-xl font-semibold flex items-center gap-3 text-[#00121E] dark:text-gray-200">
