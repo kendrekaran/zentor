@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Quote, ChevronLeft, ChevronRight, Star, StarHalf } from "lucide-react"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence } from "framer-motion"
 
 const testimonials = [
   {
@@ -61,14 +61,7 @@ const testimonials = [
     accent: "blue",
   },
 ]
-const accentColors = {
-  emerald: {
-    gradient: "from-emerald-500/10 to-transparent",
-    text: "text-emerald-600 dark:text-emerald-400",
-    ring: "ring-emerald-500/20",
-    bg: "bg-emerald-500"
-  }
-}
+
 
 export default function Testimonials() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
