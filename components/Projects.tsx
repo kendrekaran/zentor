@@ -30,7 +30,7 @@ import React, { useState } from 'react';
           id: 2,
           title: 'Fitness Tracker App',
           category: 'Apps',
-          image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&q=80&w=800',
+          image: 'https://i.pinimg.com/736x/50/ef/5b/50ef5be1017faee259cd2703ed689566.jpg',
           description: 'A modern mobile application with intuitive navigation and seamless user experience, built using the latest technologies.',
           tags: ['React Native', 'Redux', 'Node.js']
         },
@@ -38,7 +38,7 @@ import React, { useState } from 'react';
           id: 3,
           title: 'EcoLife Campaign',
           category: 'Advertising',
-          image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800',
+          image: 'https://i.pinimg.com/474x/80/82/7c/80827ce7726fcf6f91a04c10d676f7fe.jpg',
           description: 'Comprehensive digital marketing campaign that increased brand awareness and engagement across multiple platforms.',
           tags: ['Marketing', 'Social Media', 'Analytics']
         },
@@ -46,7 +46,7 @@ import React, { useState } from 'react';
           id: 4,
           title: 'TechFlow Branding',
           category: 'Designs',
-          image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800',
+          image: 'https://i.pinimg.com/474x/49/76/5b/49765b9044657c41804126d48f4be9a1.jpg',
           description: 'Complete brand identity design including logo, color palette, typography, and brand guidelines for a tech startup.',
           tags: ['Branding', 'UI/UX', 'Design System']
         },
@@ -54,7 +54,7 @@ import React, { useState } from 'react';
           id: 5,
           title: 'GlobalReach Ads',
           category: 'Ads Campaign',
-          image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800',
+          image: 'https://i.pinimg.com/474x/af/85/c9/af85c9cc2c2a8034f9be36a35dfb743a.jpg',
           description: 'Strategic social media advertising campaign that drove significant user acquisition and engagement.',
           tags: ['Social Media', 'Analytics', 'Growth']
         }
@@ -65,7 +65,7 @@ import React, { useState } from 'react';
       : allProjects.filter(project => project.category === activeTab);
   
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#00121E] dark:to-[#00121E]">
+      <div id='portfolio' className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#00121E] dark:to-[#00121E]">
         <div className="container mx-auto px-4 py-16">
           {/* Header */}
           <div className="text-center mb-10">

@@ -15,9 +15,9 @@ export default function HeroSection() {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonials" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "About", href: "#about" }
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Contact", href: "#contact" }
   ];
 
   useEffect(() => {
@@ -27,7 +27,6 @@ export default function HeroSection() {
   }, []);
 
   useEffect(() => {
-    // Close mobile menu when window is resized to desktop size
     const handleResize = () => {
       if (window.innerWidth >= 768) { // md breakpoint
         setIsMenuOpen(false);
@@ -89,7 +88,8 @@ export default function HeroSection() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`flex flex-col min-h-screen ${isDark ? 'bg-[#00121E]' : 'bg-gradient-to-b from-white to-purple-50'}`}
+      id="home"
+      className={`flex flex-col min-h-screen ${isDark ? 'bg-[#00121E]' : 'bg-gradient-to-b from-gray-50 to-white'}`}
     >
       {/* Header */}
       <header className={`fixed top-0 z-50 w-full p-4 px-4 sm:px-6 lg:px-8 ${
@@ -107,7 +107,7 @@ export default function HeroSection() {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
             className="flex items-center gap-2 sm:gap-3"
           >
-            <div className={`rounded-full p-2 sm:p-2.5 shadow-lg ${isDark ? 'shadow-purple-600/20' : 'shadow-purple-200'}`}>
+            <div className={`rounded-full p-2 sm:p-2.5 shadow-lg ${isDark ? 'shadow-purple-400/20' : 'shadow-purple-200'}`}>
               <Image
                 src="/logo1.svg"
                 alt="Logo icon"
@@ -236,7 +236,7 @@ export default function HeroSection() {
               className="lg:hidden order-1 w-full space-y-6"
             >
               <div className="space-y-4 text-center">
-                <h2 className="text-sm sm:text-base font-medium text-gray-600 dark:text-gray-400">
+                <h2 className="text-sm sm:text-base font-semibold text-gray-600 dark:text-gray-400">
                   Hello There, We&apos;re
                 </h2>
                 <motion.div className="space-y-4">
@@ -301,24 +301,25 @@ export default function HeroSection() {
               initial="initial"
               animate="animate"
               className="order-3 lg:order-1 w-full lg:w-1/2 space-y-8"
-            >              {/* Desktop-only heading */}
+            >              
+            {/* Desktop-only heading */}
               <div className="hidden lg:block space-y-6">
-                <h2 className="text-lg font-medium text-gray-600 dark:text-gray-400 animate-fade-in">
+                <h2 className="text-lg font-semibold ml-1 text-gray-600 dark:text-gray-400 animate-fade-in">
                   Hello There, We&apos;re
                 </h2>
-                <div className="space-y-4">
-                  <div className="flex">
+                <div className="space-y-5">
+                  <div>
                     <Image
                       src="/logo3.svg"
                       alt="Logo"
                       width={400}
                       height={400}
-                      className="w-[280px] xl:w-[320px] object-contain hover:scale-105 transition-transform duration-300"
+                      className="w-[280px] xl:w-[375px] object-contain hover:scale-105 transition-transform duration-300"
                       priority
                     />
                   </div>
-                  <div className="space-y-2">
-                    <h1 className="text-4xl xl:text-4xl font-bold text-black dark:text-gray-400">
+                  <div className="space-y-3 ">
+                    <h1 className="text-4xl xl:text-4xl font-bold text-black dark:text-gray-200">
                       Digital Solution Agency
                     </h1>
                     <p className="text-lg font-medium text-gray-600 dark:text-gray-400">

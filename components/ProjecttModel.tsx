@@ -28,7 +28,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
       />
       
       {/* Modal */}
-      <div className="relative w-full max-w-4xl mx-4 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-4xl mx-4 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
         <div className="absolute right-4 top-4 z-10">
           <button
             onClick={onClose}

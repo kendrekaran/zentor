@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Code, Palette, Share2, Search, Database } from 'lucide-react';
+import { Monitor, Palette, Share2, Search, Smartphone, Megaphone } from 'lucide-react';
 
 const services = [
   {
@@ -9,9 +9,9 @@ const services = [
     color: "from-[#00EA6F] to-teal-500"
   },
   {
-    title: "Custom Development",
-    description: "Building tailored solutions and applications that solve your unique business challenges.",
-    icon: Code,
+    title: "App Development",
+    description: "Building high-performance mobile and web applications tailored to your business needs.",
+    icon: Smartphone,
     color: "from-blue-500 to-indigo-500"
   },
   {
@@ -27,22 +27,23 @@ const services = [
     color: "from-orange-500 to-red-500"
   },
   {
-    title: "SEO Optimization",
-    description: "Improving your website's visibility and ranking in search engine results.",
+    title: "Ads Campaigning",
+    description: "Creating data-driven ad campaigns that maximize reach and conversions for your business.",
     icon: Search,
     color: "from-yellow-500 to-orange-500"
   },
   {
-    title: "Database Design",
-    description: "Creating efficient and scalable database solutions for your business needs.",
-    icon: Database,
+    title: "Advertising",
+    description: "Strategic marketing solutions to enhance brand visibility and engagement across multiple platforms.",
+    icon: Megaphone,
     color: "from-cyan-500 to-blue-500"
   }
 ];
 
+
 const Services = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-[#00121E] dark:to-[#00121E] py-24 px-6">
+    <div id='services' className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-[#00121E] dark:to-[#00121E] py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10">
@@ -60,7 +61,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white dark:bg-[#011420] rounded-2xl p-8 
+              className="group relative bg-white shadow-lg dark:bg-[#011420] rounded-2xl p-8 
                          hover:shadow-2xl transition-all duration-500 ease-out
                          border border-gray-100 dark:border-gray-700
                          hover:border-transparent dark:hover:border-transparent
@@ -94,7 +95,7 @@ const Services = () => {
               <div className="mt-6 flex items-center text-sm font-medium
                             text-gray-600 dark:text-gray-400 group-hover:text-[#00EA6F] 
                             dark:group-hover:text-[#00EA6F] transition-colors duration-300">
-                <span>Contact Us</span>
+                <a href="#contact"><span>Contact Us</span></a> 
                 <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform duration-300" 
                      fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
