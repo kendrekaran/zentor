@@ -368,6 +368,7 @@ export default function HeroSection() {
                 variants={fadeInUp}
                 className="flex justify-center lg:justify-start pt-2"
               >
+                <a href="#contact">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -378,10 +379,11 @@ export default function HeroSection() {
                     <div className="absolute inset-0 rounded-full animate-ping bg-[#00EA6F]/20" />
                   </div>
                   <div className="relative flex items-center justify-center gap-2 font-semibold">
-                    <span className="text-base">Book a meet</span>
+                   <span className="text-base">Book a meet</span>
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" />
                   </div>
                 </motion.button>
+                </a>
               </motion.div>
             </motion.div>
           </div>
