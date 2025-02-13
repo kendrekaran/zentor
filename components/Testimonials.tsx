@@ -62,7 +62,6 @@ const testimonials = [
   },
 ]
 
-
 export default function Testimonials() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -78,17 +77,6 @@ export default function Testimonials() {
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    if (isScrolling) return
-
-    const interval = setInterval(() => {
-      scroll('right')
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [activeIndex, isScrolling])
 
   const scroll = (direction: string) => {
     if (scrollContainerRef.current) {
@@ -171,7 +159,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-[#00121E]">
       <div className="container px-4 mx-auto space-y-8 md:space-y-12">
-      <div className="text-center mb-10">
+        <div className="text-center mb-10">
           <h2 className="text-lg font-semibold text-[#00EA6F] dark:text-[#00EA6F] mb-4">
             Testimonials
           </h2>
