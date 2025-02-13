@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, Loader2 } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Mail, Phone, Loader2 } from 'lucide-react';
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -99,20 +99,14 @@ function Contact() {
     { 
       icon: Twitter, 
       label: 'Twitter', 
-      href: '#',
+      href: 'https://x.com/ZentorHQ',
       hoverClass: 'hover:bg-[#1DA1F2] hover:text-white' 
     },
     { 
       icon: Linkedin, 
       label: 'LinkedIn', 
-      href: '#',
+      href: 'https://www.linkedin.com/company/zentorhq/',
       hoverClass: 'hover:bg-[#0A66C2] hover:text-white' 
-    },
-    { 
-      icon: Facebook, 
-      label: 'Facebook', 
-      href: '#',
-      hoverClass: 'hover:bg-[#1877F2] hover:text-white' 
     },
     { 
       icon: Instagram, 
@@ -123,7 +117,7 @@ function Contact() {
   ];
 
   return (
-    <div id='contact' className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-[#00121E] dark:to-grau-800">
+    <div id='contact' className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-[#00121E] dark:to-[#00121E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <span className="inline-block mb-2 sm:mb-4">
