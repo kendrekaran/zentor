@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { ArrowUpRight, ChevronDown, Monitor, Search, Palette, Megaphone, Share2, Bot } from 'lucide-react';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectModal from './ProjecttModel';
 

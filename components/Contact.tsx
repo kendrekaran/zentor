@@ -1,4 +1,4 @@
-import { Mail, Instagram, Linkedin, Twitter, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -24,7 +24,7 @@ function Contact() {
         
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:px-24 items-center">
           {/* Left Column - Contact Information */}
           <div className="space-y-12">
           <div className="group">
@@ -85,7 +85,10 @@ function Contact() {
 
           {/* Right Column - Illustration */}
           <div className="relative">
-            
+            <img 
+              src="/contact_us.png"
+              className="w-full h-full rounded-lg"
+            />
           </div>
         </div>
       </div>
