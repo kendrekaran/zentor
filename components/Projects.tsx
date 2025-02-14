@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { ArrowUpRight, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, Monitor, Search, Palette, Megaphone, Share2, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectModal from './ProjecttModel';
 
@@ -17,56 +17,80 @@ const ProjectsPage = () => {
     tags: string[];
   } | null>(null);
   
-  const tabs = ['All', 'Websites', 'Apps', 'Advertising', 'Designs', 'Ads Campaign'];
+  const tabs = ['All', 'Web Dev', 'SEO', 'Branding', 'Advertising', 'Social Media', 'AI'];
   
   const allProjects = [
     {
       id: 1,
-      title: 'Zenops Landing Page',
-      category: 'Websites',
-      image: 'https://i.pinimg.com/736x/c0/f4/bb/c0f4bb2d49afebdf1701f6e632ab9027.jpg',
-      description: 'Zenops is an innovative and visually captivating landing page designed with a sleek, responsive, and modern user interface.',
-      tags: ['React', 'Tailwind', 'TypeScript']
+      title: 'E-commerce Platform',
+      category: 'Web Dev',
+      image: 'https://i.pinimg.com/736x/ed/7e/e2/ed7ee25b0ae42d7f436f3484468cdeca.jpg',
+      description: 'Custom e-commerce platform with advanced features including inventory management, payment processing, and analytics dashboard.',
+      tags: ['React', 'Node.js', 'Stripe', 'MongoDB']
     },
     {
       id: 2,
-      title: 'Fitness Tracker App',
-      category: 'Apps',
-      image: 'https://i.pinimg.com/736x/50/ef/5b/50ef5be1017faee259cd2703ed689566.jpg',
-      description: 'A modern mobile application with intuitive navigation and seamless user experience, built using the latest technologies.',
-      tags: ['React Native', 'Redux', 'Node.js']
+      title: 'Local Business SEO Campaign',
+      category: 'SEO',
+      image: 'https://i.pinimg.com/736x/93/63/4a/93634ab9dfe46f95561b88a182a97e3b.jpg',
+      description: 'Comprehensive SEO strategy that improved search rankings by 200% and doubled organic traffic within 6 months.',
+      tags: ['SEO', 'Analytics', 'Content Strategy']
     },
     {
       id: 3,
-      title: 'EcoLife Campaign',
-      category: 'Advertising',
-      image: 'https://i.pinimg.com/474x/80/82/7c/80827ce7726fcf6f91a04c10d676f7fe.jpg',
-      description: 'Comprehensive digital marketing campaign that increased brand awareness and engagement across multiple platforms.',
-      tags: ['Marketing', 'Social Media', 'Analytics']
+      title: 'Tech Startup Branding',
+      category: 'Branding',
+      image: 'https://i.pinimg.com/474x/3d/9b/1e/3d9b1e27680c75551cfe85d63d8e8e98.jpg',
+      description: 'Complete brand identity design including logo, style guide, and marketing materials for an AI startup.',
+      tags: ['Branding', 'Design', 'Identity']
     },
     {
       id: 4,
-      title: 'TechFlow Branding',
-      category: 'Designs',
-      image: 'https://i.pinimg.com/474x/49/76/5b/49765b9044657c41804126d48f4be9a1.jpg',
-      description: 'Complete brand identity design including logo, color palette, typography, and brand guidelines for a tech startup.',
-      tags: ['Branding', 'UI/UX', 'Design System']
+      title: 'Multi-Channel Ad Campaign',
+      category: 'Advertising',
+      image: 'https://i.pinimg.com/736x/51/04/cf/5104cf4b902d08cb7a0c38edd9beb096.jpg',
+      description: 'Strategic advertising campaign across Google, Facebook, and LinkedIn that achieved 300% ROI.',
+      tags: ['PPC', 'Social Ads', 'Analytics']
     },
     {
       id: 5,
-      title: 'GlobalReach Ads',
-      category: 'Ads Campaign',
-      image: 'https://i.pinimg.com/474x/af/85/c9/af85c9cc2c2a8034f9be36a35dfb743a.jpg',
-      description: 'Strategic social media advertising campaign that drove significant user acquisition and engagement.',
-      tags: ['Social Media', 'Analytics', 'Growth']
+      title: 'Social Media Growth',
+      category: 'Social Media',
+      image: 'https://i.pinimg.com/736x/41/cc/c6/41ccc64650a8bb96401f3ed01af0cb7e.jpg',
+      description: 'Organic social media strategy that grew following by 50k and increased engagement by 400%.',
+      tags: ['Content Strategy', 'Community Management', 'Analytics']
     },
     {
       id: 6,
-      title: 'Health Track Platform',
-      category: 'Websites',
-      image: 'https://i.pinimg.com/736x/23/fa/e6/23fae638abb46b6ad37efcc89ec10753.jpg',
-      description: 'A comprehensive health tracking platform that helps users monitor their fitness journey and achieve their wellness goals.',
-      tags: ['React', 'Node.js', 'MongoDB']
+      title: 'AI Customer Service Bot',
+      category: 'AI',
+      image: 'https://i.pinimg.com/736x/19/e6/7f/19e67faf986ec2ebf7eaf71c9e46cbe0.jpg',
+      description: 'Custom AI chatbot that handles 70% of customer inquiries automatically and integrates with existing CRM.',
+      tags: ['AI', 'Machine Learning', 'Natural Language Processing']
+    },
+    {
+      id: 7,
+      title: 'Restaurant Website',
+      category: 'Web Dev',
+      image: 'https://i.pinimg.com/736x/71/cc/fe/71ccfebd14fbb3b25dd00b01971610d1.jpg',
+      description: 'Modern restaurant website with online ordering system, reservation management, and menu customization.',
+      tags: ['React', 'Firebase', 'Stripe']
+    },
+    {
+      id: 8,
+      title: 'Influencer Marketing Campaign',
+      category: 'Social Media',
+      image: 'https://i.pinimg.com/736x/65/97/b9/6597b9c626293d6e19e1ac7b4d361816.jpg',
+      description: 'Successful influencer partnership program that generated 2M+ impressions and 150k+ engagement.',
+      tags: ['Influencer Marketing', 'Content Creation', 'Analytics']
+    },
+    {
+      id: 9,
+      title: 'AI Content Generator',
+      category: 'AI',
+      image: 'https://i.pinimg.com/474x/83/f8/71/83f871685c88c59ac76b02aa1ec9a0a0.jpg',
+      description: 'Custom AI tool that generates SEO-optimized content and social media posts based on brand guidelines.',
+      tags: ['AI', 'Content Generation', 'NLP']
     }
   ];
 
@@ -185,16 +209,16 @@ const ProjectsPage = () => {
         <div className="text-center mt-6 text-sm text-gray-500 dark:text-gray-400">
           Showing {visibleProjectsList.length} of {filteredProjects.length} projects
         </div>
-  
-          {/* Modal */}
-          <ProjectModal
-            project={selectedProject}
-            isOpen={!!selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        </div>
+
+        {/* Modal */}
+        <ProjectModal
+          project={selectedProject}
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       </div>
-    );
-  };
-  
-  export default ProjectsPage;
+    </div>
+  );
+};
+
+export default ProjectsPage;

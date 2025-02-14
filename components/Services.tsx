@@ -1,41 +1,41 @@
 import React from 'react';
-import { Monitor, Palette, Share2, Search, Smartphone, Megaphone } from 'lucide-react';
+import { Monitor, Palette, Share2, Search, Megaphone, Bot } from 'lucide-react';
 
 const services = [
   {
-    title: "Website Development",
-    description: "Creating modern, responsive websites that deliver exceptional user experiences and drive results.",
+    title: "Website Development & Ecommerce",
+    description: "High-performing websites and online stores with custom designs and reliable hosting.",
     icon: Monitor,
     color: "from-[#00EA6F] to-teal-500"
   },
   {
-    title: "App Development",
-    description: "Building high-performance mobile and web applications tailored to your business needs.",
-    icon: Smartphone,
+    title: "Search Engine Optimization",
+    description: "Boost online presence with SEO, business listings, and review management.",
+    icon: Search,
     color: "from-blue-500 to-indigo-500"
   },
   {
-    title: "UI/UX Design",
-    description: "Crafting intuitive interfaces and engaging user experiences that delight your customers.",
+    title: "Branding & Identity",
+    description: "Compelling brand identities, from logos to business elements.",
     icon: Palette,
     color: "from-purple-500 to-pink-500"
   },
   {
-    title: "Social Media",
-    description: "Developing effective social media strategies to boost your brand's online presence.",
-    icon: Share2,
+    title: "Digital Advertising",
+    description: "Strategic marketing campaigns for maximum conversions.",
+    icon: Megaphone,
     color: "from-orange-500 to-red-500"
   },
   {
-    title: "Ads Campaigning",
-    description: "Creating data-driven ad campaigns that maximize reach and conversions for your business.",
-    icon: Search,
+    title: "Social Media Marketing",
+    description: "Grow your brand with targeted content and partnerships.",
+    icon: Share2,
     color: "from-yellow-500 to-orange-500"
   },
   {
-    title: "Advertising",
-    description: "Strategic marketing solutions to enhance brand visibility and engagement across multiple platforms.",
-    icon: Megaphone,
+    title: "AI & Automation",
+    description: "Enhanced customer interactions with AI solutions.",
+    icon: Bot,
     color: "from-cyan-500 to-blue-500"
   }
 ];

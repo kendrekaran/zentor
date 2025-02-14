@@ -1,12 +1,14 @@
 import React from 'react';
-import { Monitor, Smartphone, Paintbrush, Megaphone } from "lucide-react";
+import { Monitor, Paintbrush, Megaphone, Search, Share2, Bot } from "lucide-react";
 
 const ScrollingBanner = () => {
   const services = [
     { icon: Monitor, text: "Website Development" },
-    { icon: Smartphone, text: "App Development" },
-    { icon: Paintbrush, text: "Product Designing" },
+    { icon: Search, text: "Search Engine Optimization" },
+    { icon: Paintbrush, text: "Branding & Identity" },
     { icon: Megaphone, text: "Digital Advertising" },
+    { icon: Share2, text: "Social Media Marketing" },
+    { icon: Bot, text: "AI & Automation" },
   ];
 
   const doubledServices = [...services, ...services, ...services];
