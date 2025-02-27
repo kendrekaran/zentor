@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useLocation } from 'react-router-dom';
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, Moon, Sun, Twitter, Linkedin, ArrowRight, X, Instagram } from "lucide-react";
@@ -12,8 +11,6 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function HeroSection() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -30,7 +27,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location]);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {

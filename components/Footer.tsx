@@ -1,6 +1,11 @@
-import React from 'react';
+"use client"
+import React, { useEffect } from 'react';
 
 const Footer = () => {
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <footer className="w-full py-8 bg-gray-50 dark:bg-[#00121E] border-t border-gray-200 dark:border-gray-800">

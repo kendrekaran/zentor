@@ -68,6 +68,9 @@ export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const [visibleCards, setVisibleCards] = useState(3)
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   useEffect(() => {
     const updateLayout = () => {

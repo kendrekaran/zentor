@@ -1,4 +1,5 @@
-import React from 'react';
+"use client"
+import React, { useEffect } from 'react';
 import { Monitor, Paintbrush, Megaphone, Search, Share2, Bot } from "lucide-react";
 
 const ScrollingBanner = () => {
@@ -12,6 +13,10 @@ const ScrollingBanner = () => {
   ];
 
   const doubledServices = [...services, ...services, ...services];
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <div className="w-full py-4 bg-[#00EA6F] text-black overflow-hidden">

@@ -16,6 +16,10 @@ const ProjectsPage = () => {
     description: string;
     tags: string[];
   } | null>(null);
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   
   const tabs = ['All', 'Web Dev', 'SEO', 'Branding', 'Advertising', 'Social Media', 'AI'];
   
