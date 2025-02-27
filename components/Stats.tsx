@@ -13,7 +13,6 @@ const stats = [
 const Stats = () => {
   const containerRef = useRef<HTMLDivElement>({} as HTMLDivElement);
   
-  // Create individual counters for each stat
   const counter1 = useCounter(containerRef, stats[0].value);
   const counter2 = useCounter(containerRef, stats[1].value);
   const counter3 = useCounter(containerRef, stats[2].value);

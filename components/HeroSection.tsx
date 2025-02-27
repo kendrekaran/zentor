@@ -25,8 +25,19 @@ export default function HeroSection() {
     localStorage.setItem('theme', 'dark');
   }, []);
 
+  // Fixed scroll-to-top functionality
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Check if we're in a browser environment
+    if (typeof window !== "undefined") {
+      // Use requestAnimationFrame to ensure the browser has painted before scrolling
+      window.requestAnimationFrame(() => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'auto' // Using 'auto' instead of 'smooth' for immediate effect
+        });
+      });
+    }
   }, []);
 
   useEffect(() => {
