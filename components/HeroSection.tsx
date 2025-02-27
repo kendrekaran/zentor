@@ -27,7 +27,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     const handleResize = () => {
