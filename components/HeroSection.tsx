@@ -11,8 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function HeroSection() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false)
-
+  const [, setIsScrolled] = useState(false)
 
   const navItems = [
     { name: "Home", href: "#home" },
