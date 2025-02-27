@@ -1,5 +1,4 @@
-"use client"
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Monitor, Palette, Share2, Search, Megaphone, Bot } from 'lucide-react';
 
 const services = [
@@ -43,9 +42,7 @@ const services = [
 
 
 const Services = () => {
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  
   return (
     <div id='services' className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-[#00121E] dark:to-[#00121E] py-24 px-6">
       <div className="max-w-7xl mx-auto">

@@ -11,6 +11,8 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function HeroSection() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
+
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -26,8 +28,13 @@ export default function HeroSection() {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    const handleScroll = () => {
+        setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+}, [])
 
   useEffect(() => {
     const handleResize = () => {

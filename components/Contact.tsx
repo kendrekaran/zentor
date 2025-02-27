@@ -1,16 +1,12 @@
-"use client"
 import { Mail, Phone } from 'lucide-react';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Twitter, Instagram, Linkedin } from 'lucide-react'; // Import social icons
 import Link from 'next/link';
 
 function Contact() {
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-
+  
   const emails = [
     'Aditya@zentor.in',
     'Divye@zentor.in'
