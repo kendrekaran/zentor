@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectModal from './ProjecttModel';
@@ -93,6 +93,10 @@ const ProjectsPage = () => {
       tags: ['AI', 'Content Generation', 'NLP']
     }
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const filteredProjects = activeTab === 'All' 
     ? allProjects 

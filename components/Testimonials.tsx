@@ -6,57 +6,58 @@ import { Quote, ChevronLeft, ChevronRight, Star, StarHalf } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Ananya Sharma",
-    role: "CEO, TechVision Solutions",
-    image: "https://i.pinimg.com/474x/aa/9c/53/aa9c53929e2e9668fe9a3ca8c3a23712.jpg",
+    name: "Ferns N Petals",
+    role: "New Delhi, India",
+    image: "https://i7.fnp.com/assets/images/defaultLogo.jpg",
     content:
-      "Working with this team transformed our digital presence completely. Their attention to detail and innovative approach helped us achieve a 200% increase in user engagement.",
+      "ZENTOR's ad campaigns delivered excellent ROI and helped us scale online gifting sales in multiple categories, specializing in multi-product carts.",
     rating: 5,
-    accent: "blue",
+    accent: "purple",
   },
+  
   {
-    name: "Rohan Mehta",
-    role: "Founder, EcoStyle",
-    image: "https://i.pinimg.com/474x/ae/9a/41/ae9a41aead9712eb825e7a96bf9816b2.jpg",
+    name: "Vietnam Tourism",
+    role: "Hanoi, Vietnam",
+    image: "https://image.vietnam.travel/themes/custom/vietnamtourism/images/logo.jpg",
     content:
-      "The level of creativity and technical expertise they brought to our project was exceptional. Our e-commerce conversions have increased by 150% since launch.",
+      "They were our proud marketing partners in the #VisitVietnam program in India and helped us spread the word effectively, boosting engagement and reach.",
     rating: 5,
     accent: "green",
   },
   {
-    name: "Priya Iyer",
-    role: "Marketing Director, Bloom & Co",
-    image: "https://i.pinimg.com/474x/26/1d/09/261d09ebc9989a2dd442152d89c4d54f.jpg",
+    name: "Pizza Galleria",
+    role: "Haryana, India",
+    image: "https://pizzagalleria.in/wp-content/uploads/2024/05/cropped-Pizza-Galleria-Logo-1.png",
     content:
-      "Their team's dedication to understanding our brand voice and translating it into a stunning website design exceeded all expectations.",
+      "Our online orders increased drastically with ZENTOR’s targeted ad strategies, running campaigns across North India for maximum reach and impact. Highly recommended!",
     rating: 4.5,
-    accent: "purple",
-  },
-  {
-    name: "Arjun Kapoor",
-    role: "CTO, InnovateLab",
-    image: "https://i.pinimg.com/736x/e0/97/32/e09732eecf2d3d43ff0e578b1d640724.jpg",
-    content:
-      "The seamless integration of complex features while maintaining an intuitive user interface showcases their technical prowess.",
-    rating: 5,
     accent: "orange",
   },
   {
-    name: "Neha Verma",
-    role: "Owner, Artisan Crafts",
-    image: "https://i.pinimg.com/736x/c3/e9/7a/c3e97aa255c604a1123e554cc12eefdc.jpg",
+    name: "Edura App",
+    role: "Leicester, United Kingdom",
+    image: "https://images.sftcdn.net/images/t_app-icon-m/p/e5af70ff-37e4-446f-a89b-0754a8702a14/1873479680/edura-logo",
     content:
       "From concept to execution, they delivered a website that perfectly captures our brand's essence. Our customers love the new experience.",
-    rating: 5,
+    rating: 4.5,
     accent: "pink",
   },
   {
-    name: "Vikram Nair",
-    role: "CEO, TechVision Solutions",
-    image: "https://i.pinimg.com/474x/22/88/9f/22889f9c436c0ebb444aee23b6fda557.jpg",
+    name: "SGF - Spice Grill Flame",
+    role: "New Delhi, India",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF3d7wWTzTwCn0_lQhHrxKSrLiZWqIAE4fSg&s",
     content:
-      "Working with this team transformed our digital presence completely. Their attention to detail and innovative approach helped us achieve a 200% increase in user engagement.",
-    rating: 5,
+      "ZENTOR built our website and digital presence, driving more customers to our restaurants and kiosks. Great work!",
+    rating: 4.5,
+    accent: "blue",
+  },
+  {
+    name: "CK Designers",
+    role: "Dublin, Ireland",
+    image: "https://sortlist.gumlet.io/sortlist-core-api/ptvdn7zewgzi2o1vj9fn2598ah53?w=150&q=95&format=auto",
+    content:
+      "ZENTOR helped us amplify event reach and engagement seamlessly. A great marketing partner!",
+    rating: 4.5,
     accent: "blue",
   },
 ]

@@ -9,7 +9,6 @@ import ScrollingBanner from "./ScrollingBanner";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function HeroSection() {
-  // Initialize with dark theme
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,10 +20,13 @@ export default function HeroSection() {
     { name: "Contact", href: "#contact" }
   ];
 
-  // Force dark theme on initial load
   useEffect(() => {
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
