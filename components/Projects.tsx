@@ -24,7 +24,7 @@ const ProjectsPage = () => {
       id: 1,
       title: 'E-commerce Platform',
       category: 'Web Dev',
-      image: 'https://i.pinimg.com/736x/ed/7e/e2/ed7ee25b0ae42d7f436f3484468cdeca.jpg',
+      image: 'https://i.pinimg.com/474x/43/85/11/43851151ed815204265c755eb0bd1d16.jpg',
       description: 'Custom e-commerce platform with advanced features including inventory management, payment processing, and analytics dashboard.',
       tags: ['React', 'Node.js', 'Stripe', 'MongoDB']
     },

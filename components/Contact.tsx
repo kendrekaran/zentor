@@ -1,7 +1,7 @@
 import { Mail, Phone } from 'lucide-react';
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Twitter, Instagram, Linkedin } from 'lucide-react'; // Import social icons
+import { Twitter, Instagram, Linkedin } from 'lucide-react'; 
 import Link from 'next/link';
 
 function Contact() {
@@ -15,7 +15,6 @@ function Contact() {
   return (
     <div id='contact' className="h-full py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-[#00121E] dark:to-[#00121E]">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-10">
           <h2 className="text-lg font-semibold text-[#00EA6F] dark:text-[#00EA6F] mb-4">
             Contact us
@@ -26,9 +25,7 @@ function Contact() {
           <div className="w-24 h-1 bg-[#00EA6F] mx-auto rounded-full"></div>
         </div>
 
-        {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2  md:px-24 items-center">
-          {/* Left Column - Contact Information */}
           <div className="space-y-12">
             {/* Phone Section */}
             <div className="group">

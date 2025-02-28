@@ -1,13 +1,13 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FolderKanban, Smile, Users, Users2 } from 'lucide-react';
+import { Banknote, CircleDollarSignIcon, FolderKanban, Users } from 'lucide-react';
 import { useCounter } from '@/utils/useCounter';
 
 const stats = [
-  { icon: FolderKanban, label: 'PROJECTS', value: 300, suffix: '+' },
-  { icon: Smile, label: 'PLEASURE', value: 8.9, isDecimal: true },
-  { icon: Users, label: 'CUSTOMERS', value: 3000, suffix: '+' },
-  { icon: Users2, label: 'TEAM MEMBERS', value: 23 }
+  { icon: FolderKanban, label: 'Projects completed', value: 50, suffix: '+' },
+  { icon: CircleDollarSignIcon, label: 'Revenue generated for clients', value: 100, isDecimal: false, suffix: 'K+' },
+  { icon: Users, label: 'Clients served', value: 27, suffix: '+' },
+  { icon: Banknote, label: 'Total Ad spend managed', value: 2873, suffix : 'K+' }
 ];
 
 const Stats = () => {
