@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function HeroSection() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [, setIsScrolled] = useState(false)
+
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -26,14 +26,7 @@ export default function HeroSection() {
     localStorage.setItem('theme', 'dark');
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-        setIsScrolled(window.scrollY > 0)
-    }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-}, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,6 +55,12 @@ export default function HeroSection() {
       document.removeEventListener('click', handleClickOutside);
     };
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
