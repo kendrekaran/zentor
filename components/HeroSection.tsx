@@ -26,8 +26,6 @@ export default function HeroSection() {
     localStorage.setItem('theme', 'dark');
   }, []);
 
-
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -55,12 +53,6 @@ export default function HeroSection() {
       document.removeEventListener('click', handleClickOutside);
     };
   }, [isMenuOpen]);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-    }
-  }, []);
 
   const toggleTheme = () => {
     setIsDark(!isDark);

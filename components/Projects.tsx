@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectModal from './ProjecttModel';
@@ -110,11 +110,6 @@ const ProjectsPage = () => {
     setVisibleProjects(3);
   };
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-    }
-  }, []);
 
   return (
     <div id="portfolio" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#00121E] dark:to-[#00121E]">
@@ -149,47 +144,49 @@ const ProjectsPage = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {visibleProjectsList.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-              onClick={() => setSelectedProject(project)}
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, index) => (
-                    <span 
-                      key={index}
-                      className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+          <AnimatePresence mode="wait">
+            {visibleProjectsList.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
-                  {project.title}
-                </h3>
-                <p className="mb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-                <button className="inline-flex items-center text-sm font-semibold text-emerald-500 group/button">
-                  View Project Details
-                  <ArrowUpRight className="ml-2 w-4 h-4 transition-transform group-hover/button:translate-x-1 group-hover/button:-translate-y-1" />
-                </button>
-              </div>
-            </motion.div>
-          ))}
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <p className="mb-6 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                  <button className="inline-flex items-center text-sm font-semibold text-emerald-500 group/button">
+                    View Project Details
+                    <ArrowUpRight className="ml-2 w-4 h-4 transition-transform group-hover/button:translate-x-1 group-hover/button:-translate-y-1" />
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
 
         {/* View More Button */}
@@ -214,16 +211,12 @@ const ProjectsPage = () => {
           Showing {visibleProjectsList.length} of {filteredProjects.length} projects
         </div>
 
-        {/* Modal with AnimatePresence */}
-        <AnimatePresence>
-          {selectedProject && (
-            <ProjectModal
-              project={selectedProject}
-              isOpen={!!selectedProject}
-              onClose={() => setSelectedProject(null)}
-            />
-          )}
-        </AnimatePresence>
+        {/* Modal */}
+        <ProjectModal
+          project={selectedProject}
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       </div>
     </div>
   );
