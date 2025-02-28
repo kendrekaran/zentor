@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, Moon, Sun, Twitter, Linkedin, ArrowRight, X, Instagram } from "lucide-react";
@@ -67,6 +67,16 @@ export default function HeroSection() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const resetWindowScrollPosition = useCallback(() => window.scrollTo(0, 0), [])
+
+  useEffect(() => {
+    window.onbeforeunload = function () {
+      resetWindowScrollPosition()
+    }
+  }, [resetWindowScrollPosition])
+
+
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },

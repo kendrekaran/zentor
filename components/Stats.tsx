@@ -4,10 +4,10 @@ import { Banknote, CircleDollarSignIcon, FolderKanban, Users } from 'lucide-reac
 import { useCounter } from '@/utils/useCounter';
 
 const stats = [
+    { icon: Users, label: 'Clients served', value: 27, suffix: '+' },
   { icon: FolderKanban, label: 'Projects completed', value: 50, suffix: '+' },
-  { icon: CircleDollarSignIcon, label: 'Revenue generated for clients', value: 100, isDecimal: false, suffix: 'K+' },
-  { icon: Users, label: 'Clients served', value: 27, suffix: '+' },
-  { icon: Banknote, label: 'Total Ad spend managed', value: 2873, suffix : 'K+' }
+  { icon: Banknote, label: 'Total Ad spend managed', value: 67, suffix : 'K+' },
+  { icon: CircleDollarSignIcon, label: 'Revenue generated for clients', value: 100, isDecimal: false, suffix: 'K+' }
 ];
 
 const Stats = () => {
