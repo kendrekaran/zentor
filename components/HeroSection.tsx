@@ -149,10 +149,10 @@ export default function HeroSection() {
       className={`flex flex-col min-h-screen ${isDark ? 'bg-[#00121E]' : 'bg-white'} relative`}
     >
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 opacity-40">
+      <div className="absolute inset-0 z-0 opacity-80">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
         <Image 
-          src="/net.png"
+          src="/zentor2.png"
           alt="Background"
           fill
           className="object-cover"
@@ -338,13 +338,13 @@ export default function HeroSection() {
         transition={{ delay: 0.2, duration: 0.5 }}
         className={`flex-1 pt-28 sm:pt-32  ${isDark ? 'text-white' : 'text-black'} relative z-10`}
       >
-        <div className="container mx-auto px-4 text-left max-w-7xl">
+        <div className="container mx-auto px-4 text-center max-w-6xl">
           {/* Welcome bar */}
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex mb-6 sm:mb-12 mt-4 sm:mt-8"
+            className="flex justify-center items-center mb-6 sm:mb-12 mt-4 sm:mt-8"
           >
             <div className={`relative px-6 py-2 rounded-full ${
               isDark ? 'bg-gray-800/50 text-gray-300' : 'bg-gray-100/80 text-gray-700'
@@ -375,7 +375,7 @@ export default function HeroSection() {
                 isDark ? 'text-white' : 'text-gray-900'
               } relative z-10`}
             >
-              <span className="flex flex-row items-center gap-2 sm:gap-4">
+              <span className="flex flex-row items-center justify-center gap-2 sm:gap-4">
                 <span>We're</span>
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
@@ -409,7 +409,7 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.5 }}
-              className={`text-lg md:text-xl max-w-3xl ${
+              className={`text-lg md:text-xl max-w-3xl mx-auto ${
                 isDark ? 'text-gray-300' : 'text-gray-600'
               } relative z-10 backdrop-blur-sm py-2`}
             >
@@ -420,7 +420,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex flex-col sm:flex-row items-start gap-6 sm:pt-8 relative z-10"
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:pt-8 relative z-10"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -435,7 +435,7 @@ export default function HeroSection() {
                 </a>
               </motion.div>
               
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center">
                 {[
                   { Icon: Twitter, href: "https://x.com/ZentorHQ", label: "Twitter" },
                   { Icon: Instagram, href: "https://www.instagram.com/zentor.in/", label: "Instagram" },
@@ -473,9 +473,9 @@ export default function HeroSection() {
       </motion.main>
 
       {/* Bottom Banner */}
-      {/* <div className="relative z-10">
+      <div className="relative z-10">
         <ScrollingBanner />
-      </div> */}
+      </div>
     </motion.div>
   );
 }
