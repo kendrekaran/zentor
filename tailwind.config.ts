@@ -11,12 +11,18 @@ export default {
   	extend: {
 		animation: {
 			marquee: 'marquee 25s linear infinite',
+            meteor: 'meteor 3s linear infinite',
 		  },
 		  keyframes: {
 			marquee: {
 			  '0%': { transform: 'translateX(0)' },
 			  '100%': { transform: 'translateX(-33.33%)' },
 			},
+            meteor: {
+              '0%': { transform: 'rotate(var(--meteor-angle)) translateX(0)', opacity: '1' },
+              '70%': { opacity: '1' },
+              '100%': { transform: 'rotate(var(--meteor-angle)) translateX(-600px)', opacity: '0' },
+            },
 		  },
   		colors: {
   			background: 'hsl(var(--background))',
