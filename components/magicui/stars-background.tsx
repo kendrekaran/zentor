@@ -32,7 +32,7 @@ export const StarsBackground = () => {
     
     const initStars = () => {
       starsRef.current = [];
-      const numStars = Math.floor((canvas.width * canvas.height) / 15000); // Increased density
+      const numStars = Math.floor((canvas.width * canvas.height) / 17000); // Increased density
       
       for (let i = 0; i < numStars; i++) {
         // Add a small percentage of larger stars
@@ -105,7 +105,7 @@ export const StarsBackground = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="absolute inset-0 w-full h-[80vh] pointer-events-none"
+      className="absolute inset-0 w-full  pointer-events-none"
       aria-hidden="true"
     />
   );

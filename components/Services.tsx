@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, Palette, Share2, Search, Megaphone, Bot } from 'lucide-react';
+import { Monitor, Share2, Bot } from 'lucide-react';
 
 const services = [
 	{
@@ -9,25 +9,25 @@ const services = [
 		icon: Monitor,
 		color: 'from-[#00EA6F] to-teal-500',
 	},
-	{
-		title: 'Search Engine Optimization',
-		description:
-			'Boost online presence with SEO, business listings, and review management.',
-		icon: Search,
-		color: 'from-blue-500 to-indigo-500',
-	},
-	{
-		title: 'Branding & Identity',
-		description: 'Compelling brand identities, from logos to business elements.',
-		icon: Palette,
-		color: 'from-purple-500 to-pink-500',
-	},
-	{
-		title: 'Digital Advertising',
-		description: 'Strategic marketing campaigns for maximum conversions.',
-		icon: Megaphone,
-		color: 'from-orange-500 to-red-500',
-	},
+	// {
+	// 	title: 'Search Engine Optimization',
+	// 	description:
+	// 		'Boost online presence with SEO, business listings, and review management.',
+	// 	icon: Search,
+	// 	color: 'from-blue-500 to-indigo-500',
+	// },
+	// {
+	// 	title: 'Branding & Identity',
+	// 	description: 'Compelling brand identities, from logos to business elements.',
+	// 	icon: Palette,
+	// 	color: 'from-purple-500 to-pink-500',
+	// },
+	// {
+	// 	title: 'Digital Advertising',
+	// 	description: 'Strategic marketing campaigns for maximum conversions.',
+	// 	icon: Megaphone,
+	// 	color: 'from-orange-500 to-red-500',
+	// },
 	{
 		title: 'Social Media Marketing',
 		description:
@@ -47,9 +47,9 @@ const Services = () => {
 	return (
 		<div
 			id='services'
-			className='min-h-screen bg-[#00121E] py-24 px-6'
+			className='h-full bg-[#00121E] py-12 px-6'
 		>
-			<div className='max-w-7xl mx-auto'>
+			<div className='max-w-6xl mx-auto'>
 				{/* Header Section */}
 				<div className='text-center mb-10'>
 					<h2 className='text-lg font-semibold text-[#00EA6F] mb-4'>

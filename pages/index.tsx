@@ -1,12 +1,12 @@
 "use client";
 
 import Contact from "@/components/Contact";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import { Hero2 } from "@/components/Hero2";
-import ProjectsPage from "@/components/Projects";
 import Services from "@/components/Services";
 import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
+import { MarqueeDemo } from "@/components/Test";
 
 
 export default function Home() {
@@ -16,8 +16,8 @@ export default function Home() {
     <Hero2 />
     <Services />
     <Stats />
-    <ProjectsPage />
-    <Testimonials />
+    <CTA />
+    <MarqueeDemo />
     <Contact />
     <Footer/>
    </div>
